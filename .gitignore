@@ -1,3 +1,4 @@
 ./.idea
 ./java-streams-labs.iml
 ./.gitignore
+./out
