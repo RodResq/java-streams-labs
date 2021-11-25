@@ -26,5 +26,22 @@ public class Main {
         }*/
         double salarioTotal = empregados.stream().mapToDouble(emp -> emp.getSalario()).sum();
         System.out.println("Salario total: R$ " + salarioTotal);
+
+//        Mensageiro mensageiro = new MensageiroConsole();
+//        mensageiro.emitirMessagem("TreinaWeb");
+
+        /*
+        Mensageiro mensageiro = new Mensageiro() {
+            @Override
+            public void emitirMessagem(String mensagem) {
+                System.out.println("Mensagem do Objeto Anonimo: " + mensagem);
+            }
+        };
+        mensageiro.emitirMessagem("Treina Web");
+         */
+        Mensageiro mensageiro = (mensagem) -> System.out.println("Mensagem da expressao Lambida: " + mensagem);
+        mensageiro.emitirMessagem("TReina WEb");
+
+
     }
 }
