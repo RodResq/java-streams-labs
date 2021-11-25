@@ -4,6 +4,7 @@ import br.com.home.java.desafios.Pessoa;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -63,5 +64,15 @@ public class Main {
         System.out.println("Novo salario: " + novoSalario);
         System.out.println(functionStr.apply(new Empregado(11l, "Empregado 11", 2000, "Ti")));
 
+        //BinaryOperator
+        System.out.println("Execucao do BinaryOperator: ");
+        BinaryOperator<Empregado> binaryOperator = (emp1, emp2) ->
+                new Empregado(-1l, emp1.getNome() + emp2.getNome(), emp1.getSalario() + emp2.getSalario(),
+                        "");
+        Empregado novoEmpregado = binaryOperator.apply(
+                new Empregado(1l, "Treina", 1000, ""),
+                new Empregado(2l, "Web", 10000, "")
+                );
+        System.out.println("Novo Empregado: " + novoEmpregado.getNome() + ", RS " + novoEmpregado.getSalario());
     }
 }
