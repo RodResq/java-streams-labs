@@ -39,6 +39,7 @@ public class Main {
         };
         mensageiro.emitirMessagem("Treina Web");
          */
+        //criacao methodo ondFly
         Mensageiro mensageiro = (mensagem) -> System.out.println("Mensagem da expressao Lambida: " + mensagem);
         mensageiro.emitirMessagem("TReina WEb");
 
