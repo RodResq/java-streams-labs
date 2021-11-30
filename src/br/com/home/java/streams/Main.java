@@ -35,7 +35,7 @@ public class Main {
 //        Mensageiro mensageiro = new MensageiroConsole();
 //        mensageiro.emitirMessagem("TreinaWeb");
 
-        /*
+        /* Implementacao anonima
         Mensageiro mensageiro = new Mensageiro() {
             @Override
             public void emitirMessagem(String mensagem) {
@@ -74,5 +74,6 @@ public class Main {
                 new Empregado(2l, "Web", 10000, "")
                 );
         System.out.println("Novo Empregado: " + novoEmpregado.getNome() + ", RS " + novoEmpregado.getSalario());
+
     }
 }
