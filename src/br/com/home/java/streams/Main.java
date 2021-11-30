@@ -4,10 +4,8 @@ import br.com.home.java.desafios.Pessoa;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BinaryOperator;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
+import java.util.Random;
+import java.util.function.*;
 
 @SuppressWarnings("all")
 public class Main {
@@ -81,6 +79,13 @@ public class Main {
         Predicate<Empregado> predicate = (emp) -> emp.getNome().endsWith("Web");
         Boolean terminaComWeb = predicate.test(new Empregado(0l, "TreinaWeb", 0, ""));
         System.out.println(terminaComWeb);
+
+        //Supplier
+        Supplier<Empregado> supplier = () -> new Empregado(new Random().nextLong(), "TreinaWeb", 0, "");
+        Empregado emp1 = supplier.get();
+        System.out.println(emp1.getId());
+        Empregado emp2 = supplier.get();
+        System.out.println(emp2.getId());
 
     }
 }
