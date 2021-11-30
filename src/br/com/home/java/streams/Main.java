@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 @SuppressWarnings("all")
 public class Main {
@@ -74,6 +75,12 @@ public class Main {
                 new Empregado(2l, "Web", 10000, "")
                 );
         System.out.println("Novo Empregado: " + novoEmpregado.getNome() + ", RS " + novoEmpregado.getSalario());
+
+        //Predicate
+        System.out.println("Execucao do Predicate");
+        Predicate<Empregado> predicate = (emp) -> emp.getNome().endsWith("Web");
+        Boolean terminaComWeb = predicate.test(new Empregado(0l, "TreinaWeb", 0, ""));
+        System.out.println(terminaComWeb);
 
     }
 }
