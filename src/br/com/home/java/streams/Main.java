@@ -100,13 +100,20 @@ public class Main {
         boolean retornoPredicate = predicate.test(new Empregado(135L, "TreinaWeb", 0, ""));
         System.out.println(retornoPredicate);
 
-
         //Supplier
+//        Supplier<Empregado> supplier = () -> new Empregado(new Random().nextLong(), "TreinaWeb", 0, "");
+//        Empregado emp1 = supplier.get();
+//        System.out.println(emp1.getId());
+//        Empregado emp2 = supplier.get();
+//        System.out.println(emp2.getId());
+        System.out.println("############### Executando o Supplier #################");
+//        Recebe um tipo Generipo no qual ira ser retornado
         Supplier<Empregado> supplier = () -> new Empregado(new Random().nextLong(), "TreinaWeb", 0, "");
         Empregado emp1 = supplier.get();
         System.out.println(emp1.getId());
         Empregado emp2 = supplier.get();
         System.out.println(emp2.getId());
+
 
     }
 }
