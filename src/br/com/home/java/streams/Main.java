@@ -49,11 +49,20 @@ public class Main {
 
         //Consumer
         //Entra um paramentro e nao retorna nda
-        System.out.println("*** Execucao do Consumer ***");
+//        System.out.println("*** Execucao do Consumer ***");
+//        Consumer<Empregado> consumer = (emp) -> {
+//            System.out.println(emp.getNome() + ", R$ " + emp.getSalario());
+//        };
+//        consumer.accept(new Empregado(10l, "Empregado 10", 1000, "Educacao"));
+
+        System.out.println("########### Executando O Consumer ##############");
+//        Entre um parametro e nao retorna nada (void)
         Consumer<Empregado> consumer = (emp) -> {
-            System.out.println(emp.getNome() + ", R$ " + emp.getSalario());
+            System.out.println(String.format("Empregado: %s, recebe: R$ %.2f", emp.getNome(), emp.getSalario()));
         };
-        consumer.accept(new Empregado(10l, "Empregado 10", 1000, "Educacao"));
+
+        consumer.accept(new Empregado(100l, "Teste", 1000, "TI"));
+
 
         //Functions
         System.out.println("Execucao da Function: ");
