@@ -2,6 +2,7 @@ package br.com.home.java.streams;
 
 import br.com.home.java.desafios.Pessoa;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -65,12 +66,17 @@ public class Main {
 
 
         //Functions
-        System.out.println("Execucao da Function: ");
+//        System.out.println("Execucao da Function: ");
+//        Function<Empregado, Double> function = emp -> emp.getSalario() * 10;
+//        Function<Empregado, String> functionStr = empregado -> empregado.getNome();
+//        double novoSalario = function.apply(new Empregado(1l, "EMpregado 1", 1, ""));
+//        System.out.println("Novo salario: " + novoSalario);
+//        System.out.println(functionStr.apply(new Empregado(11l, "Empregado 11", 2000, "Ti")));
+        System.out.println("########### Functions ####################");
+//      Recebe um valor como argumento e retorna um tipo complexo (reference type)
         Function<Empregado, Double> function = emp -> emp.getSalario() * 10;
-        Function<Empregado, String> functionStr = empregado -> empregado.getNome();
-        double novoSalario = function.apply(new Empregado(1l, "EMpregado 1", 1, ""));
-        System.out.println("Novo salario: " + novoSalario);
-        System.out.println(functionStr.apply(new Empregado(11l, "Empregado 11", 2000, "Ti")));
+        double retornoFunction = function.apply(new Empregado(104l, "teste", 1, ""));
+        System.out.println(retornoFunction);
 
         //BinaryOperator
         System.out.println("Execucao do BinaryOperator: ");
