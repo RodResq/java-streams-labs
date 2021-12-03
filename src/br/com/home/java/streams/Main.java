@@ -90,10 +90,16 @@ public class Main {
         System.out.println("Novo Empregado: " + novoEmpregado.getNome() + ", RS " + novoEmpregado.getSalario());
 
         //Predicate
-        System.out.println("Execucao do Predicate");
+//        System.out.println("Execucao do Predicate");
+//        Predicate<Empregado> predicate = (emp) -> emp.getNome().endsWith("Web");
+//        Boolean terminaComWeb = predicate.test(new Empregado(0l, "TreinaWeb", 0, ""));
+//        System.out.println(terminaComWeb);
+        System.out.println("########## Execucao do Predicate #################");
+//        Recebe um parametro e retorna um booleano
         Predicate<Empregado> predicate = (emp) -> emp.getNome().endsWith("Web");
-        Boolean terminaComWeb = predicate.test(new Empregado(0l, "TreinaWeb", 0, ""));
-        System.out.println(terminaComWeb);
+        boolean retornoPredicate = predicate.test(new Empregado(135L, "TreinaWeb", 0, ""));
+        System.out.println(retornoPredicate);
+
 
         //Supplier
         Supplier<Empregado> supplier = () -> new Empregado(new Random().nextLong(), "TreinaWeb", 0, "");
