@@ -2,6 +2,8 @@ package br.com.home.java.streams;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.OptionalDouble;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @SuppressWarnings("all")
@@ -14,9 +16,20 @@ public class Main {
         empregados.add(new Empregado(3L, "Jose", 5000, "Controladoria"));
         empregados.add(new Empregado(4L, "Josefina", 7000, "CTO"));
         System.out.println("Funcionarios que comecam com J");
-        Stream<Empregado> empregadoStream = empregados.stream();
-        Stream<Empregado> empregadosFiltrado = empregados.stream().filter((emp) -> emp.getNome().startsWith("J"));
-        empregadosFiltrado.forEach((emp) -> System.out.println(emp.getNome()));
+//        Stream<Empregado> empregadoStream = empregados.stream();
+//        Stream<Empregado> empregadosFiltrado = empregadoStream.filter((emp) -> emp.getNome().startsWith("J"));
+//        List<Empregado> empregadosComJ = empregadosFiltrado.collect(Collectors.toList());
+        /*Usando Pipeline de Streams*/
+        System.out.println("Convertendo o Stream em uma lista Novamente");
+        List<Empregado> empregadosComJ = empregados.stream()
+                .filter(emp -> emp.getNome().startsWith("J"))
+                .collect(Collectors.toList());
+        empregadosComJ.stream().forEach((emp) -> System.out.println(emp.getNome()));
+        /* Retorna OptionalDouble pois nao ha garantia que valores dentro do stream */
+        OptionalDouble menorSalario = empregadosComJ.stream().mapToDouble((emp) -> emp.getSalario()).min();
+        if (menorSalario.isPresent()) {
+            System.out.println("Menor Salario : R$ " + menorSalario.getAsDouble());
+        }
 
 
 //        System.out.println("** LISTA DE EMPREGADOS **");
