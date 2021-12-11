@@ -1,12 +1,8 @@
 package br.com.home.java.streams;
 
-import br.com.home.java.desafios.Pessoa;
-
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.function.*;
+import java.util.stream.Stream;
 
 @SuppressWarnings("all")
 public class Main {
@@ -16,26 +12,32 @@ public class Main {
         empregados.add(new Empregado(1L, "Joao", 2000, "Producao"));
         empregados.add(new Empregado(2L, "Maria", 3000, "RH"));
         empregados.add(new Empregado(3L, "Jose", 5000, "Controladoria"));
-        empregados.add(new Empregado(4L, "Antonio", 7000, "CTO"));
-        System.out.println("** LISTA DE EMPREGADOS **");
+        empregados.add(new Empregado(4L, "Josefina", 7000, "CTO"));
+        System.out.println("Funcionarios que comecam com J");
+        Stream<Empregado> empregadoStream = empregados.stream();
+        Stream<Empregado> empregadosFiltrado = empregados.stream().filter((emp) -> emp.getNome().startsWith("J"));
+        empregadosFiltrado.forEach((emp) -> System.out.println(emp.getNome()));
+
+
+//        System.out.println("** LISTA DE EMPREGADOS **");
         /*for (Empregado emp: empregados) {
             System.out.println(emp.getNome());
         }*/
-        empregados.stream().forEach(emp -> {
+     /*   empregados.stream().forEach(emp -> {
             System.out.println(emp.getNome());
         });
-        /*
+        *//*
         double salarioTotal = 0.0;
         for (Empregado emp: empregados) {
             salarioTotal = salarioTotal + emp.getSalario();
-        }*/
+        }*//*
         double salarioTotal = empregados.stream().mapToDouble(emp -> emp.getSalario()).sum();
         System.out.println("Salario total: R$ " + salarioTotal);
 
 //        Mensageiro mensageiro = new MensageiroConsole();
 //        mensageiro.emitirMessagem("TreinaWeb");
 
-        /* Implementacao anonima
+        *//* Implementacao anonima
         Mensageiro mensageiro = new Mensageiro() {
             @Override
             public void emitirMessagem(String mensagem) {
@@ -43,7 +45,7 @@ public class Main {
             }
         };
         mensageiro.emitirMessagem("Treina Web");
-         */
+         *//*
         //criacao methodo ondFly
         Mensageiro mensageiro = (mensagem) -> System.out.println("Mensagem da expressao Lambda: " + mensagem);
         mensageiro.emitirMessagem("TReina WEb");
@@ -113,7 +115,7 @@ public class Main {
         System.out.println(emp1.getId());
         Empregado emp2 = supplier.get();
         System.out.println(emp2.getId());
-
+*/
 
     }
 }
