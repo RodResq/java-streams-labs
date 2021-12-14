@@ -25,7 +25,7 @@ public class Main {
 
         /**
          *  Inicio Testando o Lazy Loading dos Streams
-         * */
+         */
         /*
         Stream<Empregado> stream = empregados.stream().filter(emp -> {
             System.out.println("*** Filter sendo Excutado!");
@@ -50,7 +50,7 @@ public class Main {
 
 
         /**
-         * Testando o Method References -> Alternativa as operacoes intermediarias dos streams
+         * @Method_References -> Alternativa as operacoes intermediarias dos streams
          */
         DoubleSummaryStatistics estatisticaSalario =
                 empregados.stream().collect(Collectors.summarizingDouble(Empregado::getSalario));
