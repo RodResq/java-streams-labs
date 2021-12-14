@@ -11,6 +11,7 @@ public class Main {
     public static void main(String[] args) {
         List<Empregado> empregados = new ArrayList<>();
         empregados.add(new Empregado(1L, "Joao", 2000, "Producao"));
+        empregados.add(new Empregado(5L, "Antonio", 3500, "Producao"));
         empregados.add(new Empregado(2L, "Maria", 3000, "RH"));
         empregados.add(new Empregado(3L, "Jose", 5000, "Controladoria"));
         empregados.add(new Empregado(4L, "Josefina", 7000, "CTO"));
@@ -24,6 +25,34 @@ public class Main {
 
 
         /**
+         * @groupingBy() - Ultilizado para agrupar informacoes Usado junto com o metodo redutor Collectors e
+         * o metodo terminal collect().
+         * @Exemplo:  collect(Collector.groupingBy(Class::method))
+         * @Return - Map<k,V>
+         */
+        /* Exemplo 1 */
+        /*
+        Map<String, List<Empregado>> empregadosDepartamento =
+                empregados.stream().collect(Collectors.groupingBy(Empregado::getDepartamento));
+        empregadosDepartamento.forEach((dep, emps) -> {
+            System.out.println(" - " + dep + " - quantidade de Funcionarios: " + emps.size());
+            emps.forEach(emp -> System.out.println(" * " + emp.getNome()));
+        });
+        */
+        /* Exemplo 2 - Mais Elaborado */
+        /*
+         Map<String, List<Empregado>> empregadosPorDeprtamento =
+                 empregados.stream().collect(Collectors.groupingBy(Empregado::getDepartamento));
+         empregadosPorDeprtamento.forEach((dep, emps) -> {
+             System.out.println(" - " + dep + " - quantidades empregados: " + emps.size());
+             List<String> nomesEmpregados = emps.stream().map(emp -> emp.getNome()).collect(Collectors.toList());
+             String nomesReduce = nomesEmpregados.stream().reduce("Nomes: ", (n1, n2) -> n1 + ", " + n2);
+             System.out.println(nomesReduce);
+         });
+        */
+
+
+        /**
          * @reduce - Ultilizado para condencar um informacao, faz uma transformacao de tipo em outro
          * @Obs - Muito ultilizado com o map()
          */
@@ -32,7 +61,6 @@ public class Main {
         String nomes = nomesEmpregados.stream().reduce("Nome dos Empregados: ", (n1, n2) -> n1 + ", " + n2);
         System.out.println(nomes);
         */
-
 
         /**
          * @map() - Ultilizado para fazer um mapeamento de um tipo <T> em outro tipo <R>,
