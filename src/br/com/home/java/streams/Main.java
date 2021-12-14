@@ -30,7 +30,6 @@ public class Main {
         System.out.println("** Executando o Collect");
         List<Empregado> listaComJ = stream.collect(Collectors.toList());
 
-
         /*System.out.println("Convertendo o Stream em uma lista Novamente");
         List<Empregado> empregadosComJ = empregados.stream()
                 .filter(emp -> emp.getNome().startsWith("J"))
