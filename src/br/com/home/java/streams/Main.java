@@ -20,16 +20,27 @@ public class Main {
 //        Stream<Empregado> empregadosFiltrado = empregadoStream.filter((emp) -> emp.getNome().startsWith("J"));
 //        List<Empregado> empregadosComJ = empregadosFiltrado.collect(Collectors.toList());
         /*Usando Pipeline de Streams*/
-        System.out.println("Convertendo o Stream em uma lista Novamente");
+
+        /* Testando o Lazy Loading dos Streams*/
+        Stream<Empregado> stream = empregados.stream().filter(emp -> {
+            System.out.println("*** Filter sendo Excutado!");
+            return emp.getNome().startsWith("J");
+        });
+
+        System.out.println("** Executando o Collect");
+        List<Empregado> listaComJ = stream.collect(Collectors.toList());
+
+
+        /*System.out.println("Convertendo o Stream em uma lista Novamente");
         List<Empregado> empregadosComJ = empregados.stream()
                 .filter(emp -> emp.getNome().startsWith("J"))
                 .collect(Collectors.toList());
         empregadosComJ.stream().forEach((emp) -> System.out.println(emp.getNome()));
-        /* Retorna OptionalDouble pois nao ha garantia que valores dentro do stream */
-        OptionalDouble menorSalario = empregadosComJ.stream().mapToDouble((emp) -> emp.getSalario()).min();
-        if (menorSalario.isPresent()) {
+        *//* Retorna OptionalDouble pois nao ha garantia que valores dentro do stream *//*
+        OptionalDouble menorSalario = empregadosComJ.stream().mapToDouble((emp) -> emp.getSalario()).min();*/
+        /*if (menorSalario.isPresent()) {
             System.out.println("Menor Salario : R$ " + menorSalario.getAsDouble());
-        }
+        }*/
 
 
 //        System.out.println("** LISTA DE EMPREGADOS **");
