@@ -50,13 +50,15 @@ public class Main {
 
 
         /**
-         * @Method_References - Alternativa as operacoes intermediarias dos streams
+         * @Method_References - Alternativa as operacoes intermediarias dos streams (Classe::metodo)
          */
         DoubleSummaryStatistics estatisticaSalario =
                 empregados.stream().collect(Collectors.summarizingDouble(Empregado::getSalario));
         System.out.println("** Estatiticas dos Empregados");
         System.out.println("Maximo: R$ " + estatisticaSalario.getMax());
         System.out.println("Minimo: R$ " + estatisticaSalario.getMin());
+        System.out.println("Media R$: " + estatisticaSalario.getAverage());
+        System.out.println("Folha Salaria R$: " + estatisticaSalario.getSum());
 
 
         /**
