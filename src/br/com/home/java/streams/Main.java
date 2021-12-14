@@ -50,7 +50,7 @@ public class Main {
 
 
         /**
-         * @Method_References -> Alternativa as operacoes intermediarias dos streams
+         * @Method_References - Alternativa as operacoes intermediarias dos streams
          */
         DoubleSummaryStatistics estatisticaSalario =
                 empregados.stream().collect(Collectors.summarizingDouble(Empregado::getSalario));
@@ -60,10 +60,10 @@ public class Main {
 
 
         /**
-         * Comparando o for tradicional com o stream()
+         * @Strem() - Comparando o for tradicional com o stream()
          */
-
-        /*System.out.println("** LISTA DE EMPREGADOS **");
+        /*
+        System.out.println("** LISTA DE EMPREGADOS **");
         for (Empregado emp: empregados) {
             System.out.println(emp.getNome());
         }
@@ -73,11 +73,12 @@ public class Main {
         double salarioTotal = 0.0;
         for (Empregado emp: empregados) {
             salarioTotal = salarioTotal + emp.getSalario();
-        }*/
+        }
+        */
 
 
         /**
-         * Implementando o stream intermidiario com mapToDouble
+         * @mapToDouble - Implementando o stream intermidiario com mapToDouble
          * recupera o sama de todos os salarios
          */
         /*double salarioTotal = empregados.stream().mapToDouble(emp -> emp.getSalario()).sum();
@@ -85,26 +86,30 @@ public class Main {
 
 
         /**
-         * Maneira Tradicionar de Ultilizar uma interface Funcional
+         * @Functional_interfae - Maneira Tradicionar de Ultilizar uma interface Funcional
          */
-        /*Mensageiro mensageiro = new MensageiroConsole();
-        mensageiro.emitirMessagem("TreinaWeb");*/
+        /*
+        Mensageiro mensageiro = new MensageiroConsole();
+        mensageiro.emitirMessagem("TreinaWeb");
+        */
 
 
         /**
-        * Conhecendo a Implementacao anonima do Java 8
+        *@Implementacao_Anonima - Conhecendo a Implementacao anonima do Java 8
         */
-        /*Mensageiro mensageiro = new Mensageiro() {
+        /*
+        Mensageiro mensageiro = new Mensageiro() {
             @Override
             public void emitirMessagem(String mensagem) {
                 System.out.println("Mensagem do Objeto Anonimo: " + mensagem);
             }
         };
-        mensageiro.emitirMessagem("Treina Web");*/
+        mensageiro.emitirMessagem("Treina Web");
+        */
 
 
         /**
-         * Usando as Expressoes Lambdas para chamar os metodos das funcoes anonimas
+         *@Expressoes_Lambdas Usando as Expressoes Lambdas para chamar os metodos das funcoes anonimas
          */
         /*
          Mensageiro mensageiro = (mensagem) -> System.out.println("Mensagem da expressao Lambda: " + mensagem);
