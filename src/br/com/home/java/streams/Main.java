@@ -25,22 +25,21 @@ public class Main {
 
 
         /**
-         * @groupingBy() - Ultilizado para agrupar informacoes Usado junto com o metodo redutor Collectors e
+         * @groupingBy() - Ultilizado para agrupar informacoes. Usado junto com o metodo redutor Collectors e
          * o metodo terminal collect().
          * @Exemplo:  collect(Collector.groupingBy(Class::method))
          * @Return - Map<k,V>
          */
-        /* Exemplo 1 */
         /*
+        *//* Exemplo 1 *//*
         Map<String, List<Empregado>> empregadosDepartamento =
                 empregados.stream().collect(Collectors.groupingBy(Empregado::getDepartamento));
         empregadosDepartamento.forEach((dep, emps) -> {
             System.out.println(" - " + dep + " - quantidade de Funcionarios: " + emps.size());
             emps.forEach(emp -> System.out.println(" * " + emp.getNome()));
         });
-        */
-        /* Exemplo 2 - Mais Elaborado */
-        /*
+
+        *//* Exemplo 2 - Mais Elaborado *//*
          Map<String, List<Empregado>> empregadosPorDeprtamento =
                  empregados.stream().collect(Collectors.groupingBy(Empregado::getDepartamento));
          empregadosPorDeprtamento.forEach((dep, emps) -> {
@@ -50,7 +49,6 @@ public class Main {
              System.out.println(nomesReduce);
          });
         */
-
 
         /**
          * @reduce - Ultilizado para condencar um informacao, faz uma transformacao de tipo em outro
