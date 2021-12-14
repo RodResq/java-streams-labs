@@ -22,13 +22,17 @@ public class Main {
         Usando Pipeline de Streams
         */
 
+
         /**
          * @reduce - Ultilizado para condencar um informacao, faz uma transformacao de tipo em outro
          * @Obs - Muito ultilizado com o map()
          */
+        /*
         List<String> nomesEmpregados = empregados.stream().map(emp -> emp.getNome()).collect(Collectors.toList());
         String nomes = nomesEmpregados.stream().reduce("Nome dos Empregados: ", (n1, n2) -> n1 + ", " + n2);
         System.out.println(nomes);
+        */
+
 
         /**
          * @map() - Ultilizado para fazer um mapeamento de um tipo <T> em outro tipo <R>,
