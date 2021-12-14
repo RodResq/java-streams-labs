@@ -95,7 +95,7 @@ public class Main {
 
 
         /**
-        *@Implementacao_Anonima - Conhecendo a Implementacao anonima do Java 8
+        * @Implementacao_Anonima - Conhecendo a Implementacao anonima do Java 8
         */
         /*
         Mensageiro mensageiro = new Mensageiro() {
@@ -109,7 +109,7 @@ public class Main {
 
 
         /**
-         *@Expressoes_Lambdas Usando as Expressoes Lambdas para chamar os metodos das funcoes anonimas
+         * @Expressoes_Lambdas Usando as Expressoes Lambdas para chamar os metodos das funcoes anonimas
          */
         /*
          Mensageiro mensageiro = (mensagem) -> System.out.println("Mensagem da expressao Lambda: " + mensagem);
@@ -118,28 +118,26 @@ public class Main {
 
 
         /**
-         * Conhecento o consumer, nao retorna nada
-         * @Params T
+         * @Consumer - Conhecento o consumer, nao retorna nada
+         * @Params <T>
          */
-        /*Teste 1 */
         /*
         System.out.println("########### Executando O Consumer - Teste 1 ##############");
-        Consumer<Empregado> consumer = (emp) -> {
+        Consumer<Empregado> consumer1 = (emp) -> {
             System.out.println(emp.getNome() + ", R$ " + emp.getSalario());
         };
-        consumer.accept(new Empregado(10l, "Empregado 10", 1000, "Educacao"));
-        */
+        consumer1.accept(new Empregado(10l, "Empregado 10", 1000, "Educacao"));
 
-        /*Test 2*/
-        /*System.out.println("########### Executando O Consumer - Teste 1 ##############");
-        Consumer<Empregado> consumer = (emp) -> {
+        System.out.println("########### Executando O Consumer - Teste 2 ##############");
+        Consumer<Empregado> consumer2 = (emp) -> {
             System.out.println(String.format("Empregado: %s, recebe: R$ %.2f", emp.getNome(), emp.getSalario()));
         };
-        consumer.accept(new Empregado(100l, "Teste", 1000, "TI"));*/
+        consumer2.accept(new Empregado(100l, "Teste", 1000, "TI"));
+        */
 
 
         /**
-         * Conhecendo as Functions<T, R>
+         * @Functions - Conhecendo as Functions<T, R>
          * @Params <T>
          * @Return <R>
          */
@@ -155,7 +153,7 @@ public class Main {
 
 
         /**
-         * Conhecendo o BinaryOperator
+         * @BinaryOperator - Faz um operacao binaria em dois objeto tipo <T>
          * @Params <T> -> Recebe 2 parametros do mesmo tipo
          * @Return <T> -> Retorno do mesmo tipo apos a operacao binaria
          */
@@ -173,7 +171,7 @@ public class Main {
 
 
         /**
-         * Predicate - Faz um operacao Booleana
+         * @Predicate - Faz um operacao Booleana
          * @Params <T>
          * @Return Boolean
          */
@@ -190,7 +188,7 @@ public class Main {
 
 
         /**
-         * Suplier - Ultilizado para gerar tipos complexos
+         * @Suplier - Ultilizado para gerar tipos complexos
          * @Params - <T>
          * @Return - <T> -> Nova instancia
          */
