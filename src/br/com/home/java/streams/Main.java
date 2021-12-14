@@ -22,18 +22,7 @@ public class Main {
         Usando Pipeline de Streams
         */
 
-        /**
-         * @Method_References - Alternativa as operacoes intermediarias dos streams (Classe::metodo)
-         */
-        /*
-        DoubleSummaryStatistics estatisticaSalario =
-                empregados.stream().collect(Collectors.summarizingDouble(Empregado::getSalario));
-        System.out.println("** Estatiticas dos Empregados");
-        System.out.println("Maximo: R$ " + estatisticaSalario.getMax());
-        System.out.println("Minimo: R$ " + estatisticaSalario.getMin());
-        System.out.println("Media R$: " + estatisticaSalario.getAverage());
-        System.out.println("Folha Salaria R$: " + estatisticaSalario.getSum());
-        */
+
 
         /**
          * @map() - Ultilizado para fazer um mapeamento de um tipo <T> em outro tipo <R>,
@@ -45,6 +34,19 @@ public class Main {
         *//*Retorna uma lista so com os nomes dos empregados*//*
         List<String> nomeEmpregados = empregados.stream().map(emp -> emp.getNome()).collect(Collectors.toList());
         nomeEmpregados.forEach(System.out::println);
+        */
+
+        /**
+         * @Method_References - Alternativa as operacoes intermediarias dos streams (Classe::metodo)
+         */
+        /*
+        DoubleSummaryStatistics estatisticaSalario =
+                empregados.stream().collect(Collectors.summarizingDouble(Empregado::getSalario));
+        System.out.println("** Estatiticas dos Empregados");
+        System.out.println("Maximo: R$ " + estatisticaSalario.getMax());
+        System.out.println("Minimo: R$ " + estatisticaSalario.getMin());
+        System.out.println("Media R$: " + estatisticaSalario.getAverage());
+        System.out.println("Folha Salaria R$: " + estatisticaSalario.getSum());
         */
 
         /**
