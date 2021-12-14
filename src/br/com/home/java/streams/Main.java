@@ -22,6 +22,30 @@ public class Main {
         Usando Pipeline de Streams
         */
 
+        /**
+         * @Method_References - Alternativa as operacoes intermediarias dos streams (Classe::metodo)
+         */
+        /*
+        DoubleSummaryStatistics estatisticaSalario =
+                empregados.stream().collect(Collectors.summarizingDouble(Empregado::getSalario));
+        System.out.println("** Estatiticas dos Empregados");
+        System.out.println("Maximo: R$ " + estatisticaSalario.getMax());
+        System.out.println("Minimo: R$ " + estatisticaSalario.getMin());
+        System.out.println("Media R$: " + estatisticaSalario.getAverage());
+        System.out.println("Folha Salaria R$: " + estatisticaSalario.getSum());
+        */
+
+        /**
+         * @map() - Ultilizado para fazer um mapeamento de um tipo <T> em outro tipo <R>,
+         * para isso, ultiliza partes da informacaoes de T, que sera ultilizada em <R>.
+         * @Obs: Pode-se criar objetos com partes da informacoes de <T>
+         */
+        /*
+        System.out.println("*** Exemplo de uso do map() ***");
+        *//*Retorna uma lista so com os nomes dos empregados*//*
+        List<String> nomeEmpregados = empregados.stream().map(emp -> emp.getNome()).collect(Collectors.toList());
+        nomeEmpregados.forEach(System.out::println);
+        */
 
         /**
          *  Inicio Testando o Lazy Loading dos Streams
@@ -47,18 +71,6 @@ public class Main {
         }
             Fim Testando o Lazy Loading dos Streams
         */
-
-
-        /**
-         * @Method_References - Alternativa as operacoes intermediarias dos streams (Classe::metodo)
-         */
-        DoubleSummaryStatistics estatisticaSalario =
-                empregados.stream().collect(Collectors.summarizingDouble(Empregado::getSalario));
-        System.out.println("** Estatiticas dos Empregados");
-        System.out.println("Maximo: R$ " + estatisticaSalario.getMax());
-        System.out.println("Minimo: R$ " + estatisticaSalario.getMin());
-        System.out.println("Media R$: " + estatisticaSalario.getAverage());
-        System.out.println("Folha Salaria R$: " + estatisticaSalario.getSum());
 
 
         /**
@@ -208,5 +220,6 @@ public class Main {
         Empregado emp2 = supplier2.get();
         System.out.println(emp2.getId());
         */
+
     }
 }
